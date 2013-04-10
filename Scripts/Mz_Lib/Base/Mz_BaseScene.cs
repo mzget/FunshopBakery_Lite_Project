@@ -231,9 +231,14 @@ public class Mz_BaseScene : MonoBehaviour {
     public virtual void OnPointerOverName(string nameInput) {
     	Debug.Log("OnPointerOverName :: " + nameInput);
     }
+	
+	protected virtual  void OnApplicationPause(bool pauseStatus) {
+		Debug.Log("pauseStatus ==" + pauseStatus);
+		this.extendsStorageManager.SaveDataToPermanentMemory();
+    }
 
     void OnApplicationQuit() {
-        extendsStorageManager.SaveDataToPermanentMemory();
+        this.extendsStorageManager.SaveDataToPermanentMemory();
 
 #if UNITY_STANDALONE_WIN
         Application.CancelQuit();

@@ -2293,4 +2293,9 @@ public class BakeryShop : Mz_BaseScene {
 			Destroy(tk_coin);
 		};
 	}
+	
+	protected override void OnApplicationPause (bool pauseStatus)
+	{
+		base.OnApplicationPause (pauseStatus);
+	}
 }
